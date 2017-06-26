@@ -1,0 +1,139 @@
+<!DOCTYPE html> <!說明此程式碼是html>
+<head>
+	<title>吃貨の食記</title>
+	<meta http-equiv="Content-Type" 
+	content="text/html; charset=utf-8"> <!定義文字是用utf-8，避免中文產生亂碼>
+ 
+	/*<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>*/
+
+	<style type="text/css">
+		div{
+			float: left; // 讓div靠左，如果寬度不超過視窗大小可以併排
+		}
+
+		html{
+			background: url("D:/project/web/pic/Wood grain.jpg") no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover; 
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		#leftside{
+			border-radius: 12px;
+			background: rgba(100%,100%,100%,0.45);
+			text-align: left;
+			width: 415px;
+		}
+
+		p.leftside{
+				font-size: 20px;
+				margin-left: 20px;
+			}
+
+		#text{
+			border-radius: 12px;
+			background: rgba(100%,100%,100%,0.45);
+			text-align: center;
+			position: static;
+			width: 1200px;
+			margin-left: 30px;
+		}
+
+		p.text{
+				font-size: 25px;
+				margin-left: 35px;
+				line-height: 35px; //文字行距
+				text-align: justify;
+			}
+
+		h1.title{
+			text-align: left;
+			margin-left: 10px;
+			text-align: justify;
+		}
+
+		h6.sub_title{
+			text-align: right;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<table width="1000">
+		<tr>
+			<td>first picture<img src=""></td>
+			<td>second picture<img src=""></td>
+		</tr>
+	</table>
+	<div id="main">
+		<div id="leftside">
+			<p class="leftside">無連結</p>
+		</div>
+		
+		<div id="text">
+		<h1 class="title">CHOCO CAKE 喬可蛋糕店
+		<h6 class="sub_title">第一次撰文日期 2015/9/27 &nbsp;&nbsp;&nbsp; 最近更新日期 2015/11/18
+		<p class="text">
+		今天下午忙完一些事情之後出門到處晃晃，突然發覺住了這麼久，卻沒有仔細了解附近究竟有什麼美食店家(當然也有因為心情煩躁所以出門散散心 XD)，東晃西晃之後找到這家蛋糕店 CHOCO CAKE
+		<br><img src="D:\project\web\pic\CHOCO CAKE-5.jpg" width="600" style="float: right; margin: 15px"><br><br><br>
+		這間店在 中央西路二段78號 ，新民國小正門左前方，不仔細看還真的不會發現，因為他就在轉角小小一間，兩旁都是老店家，而且前面又有天橋，但是水藍色的招牌跟旁邊的景物形成一種對比，店內沒座位，基本上就是買了就走
+		<br><br><br>
+		<img src="D:\project\web\pic\CHOCO CAKE-1.jpg" width="600" style="float: left; margin: 15px"><br><br>
+		一進店內圖中的景色馬上映入眼簾，一旁的櫃檯上還有試吃的蛋糕，後方是製作蛋糕的場所，運氣好的話可以看到現場製作喔！當時買了一條巧克力蛋糕，購買等待的過程中店員還會跟我聊天，非常親切，因為我堂妹要一人一半，店員也依照我們的需求裝了兩袋，蛋糕是否要切、要如何切，都可以跟店員說
+		<br>
+		<img src="D:\project\web\pic\CHOCO CAKE-3.jpg" width="500" style="float: right; margin: 15px" ><br><br><br><br><br>
+		附上DM讓大家瞧瞧，巧克力蛋糕的味道很濃郁，蛋糕本體很綿密，也不會太乾，不過仍然有海綿蛋糕的特性 : 容易吸乾口中的水份，建議配個茶或咖啡會很讚，他們有一款叫雪天使，是沒有加蛋黃，並且把牛奶的比例調高，怕膽固醇的話可以買來吃吃看。店內有三款蛋糕式日期限定，一天只會有其中一款蛋糕做販售，店內的布告欄上會標示哪天是哪一款蛋糕
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		最後讓大家看看他們的紙袋，頗精美的
+		<img src="D:\project\web\pic\CHOCO CAKE-2.jpg" width="650" style="float: left; margin: 15px">
+		</p>
+	</div>
+	<div style="width:100%; height:100px;">
+		
+	</div>
+ </div>
+
+	<script> // 回頂端的code
+		(function () {
+			$("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端'/>");
+			
+			var img = "http://1.bp.blogspot.com/-zMfrIkyhlVs/Uh7FePoKU8I/AAAAAAAAHnA/WA0H_vbWAWc/s1600/go-top.png",
+			
+			locatioin = 4/5, // 按鈕出現在螢幕的高度
+			right = 120, // 距離右邊 px 值
+			opacity = 0.7, // 透明度
+			speed = 550, // 捲動速度
+			
+			$button = $("#goTopButton"),
+			$body = $(document),
+			$win = $(window);
+			$button.attr("src", img);
+			
+			$button.on({
+				mouseover: function() {$button.css("opacity", 0.9);},
+				mouseout: function() {$button.css("opacity", opacity);},
+				click: function() {$("html, body").animate({scrollTop: 0}, speed);}
+			});
+			
+			window.goTopMove = function () {
+				var scrollH = $body.scrollTop(),
+				winH = $win.height(),
+				css = {"top": winH * locatioin + "px", "position": "fixed", "right": right, "opacity": opacity};
+				
+					if(scrollH > 20) {
+						$button.css(css);
+						$button.fadeIn("slow");
+					} 
+					else {
+						$button.fadeOut("slow");
+					}
+			};
+
+			$win.on({
+				scroll: function() {goTopMove();},
+				resize: function() {goTopMove();}
+			});
+		} )();
+	</script>
+</body>
